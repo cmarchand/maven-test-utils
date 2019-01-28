@@ -25,6 +25,8 @@ import java.net.URISyntaxException;
 public class TestUtils {
     private static File targetDirectory;
     private static File projectDirectory;
+    private static String localRepositoryPath;
+    private static File localRepositoryFile;
 
     /**
      * Returns project directory.
@@ -51,4 +53,28 @@ public class TestUtils {
         return targetDirectory;
     }
     
+    /**
+     * Returns the local repository location, as an absolute path.
+     * @return Absolute local repository location.
+     */
+    public static String getLocalRepositoryPath() {
+        if(localRepositoryPath==null) {
+            localRepositoryPath = getLocalRepositoryFile().getAbsolutePath();
+        }
+        return localRepositoryPath;
+    }
+
+    /**
+     * Returns the local maven repository location.
+     * @return Local repository location
+     */
+    public static File getLocalRepositoryFile() {
+        if(localRepositoryFile==null) {
+            // TODO : compléter en fonction de la configuration des Jenkins
+            File home = new File(System.getProperty("user.home"));
+            File m2 = new File(home, ".m2");
+            localRepositoryFile = new File(m2,"repository");
+        }
+        return localRepositoryFile;
+    }
 }
