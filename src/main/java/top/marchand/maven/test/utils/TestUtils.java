@@ -32,7 +32,7 @@ public class TestUtils {
      * Returns project directory.
      * Only works if java test compiled files go to <tt>target/test-classes</tt>
      * @return The project location
-     * @throws URISyntaxException 
+     * @throws URISyntaxException In case of problem
      */
     public static File getProjectDirectory() throws URISyntaxException {
         if(projectDirectory==null) {
@@ -43,8 +43,8 @@ public class TestUtils {
     
     /**
      * Returns <tt>target/</tt> project directory
-     * @return
-     * @throws URISyntaxException 
+     * @return <tt>target/</tt> directory, in a standard maven project
+     * @throws URISyntaxException  In case of problem
      */
     public static File getTargetDirectory() throws URISyntaxException {
         if(targetDirectory==null) {

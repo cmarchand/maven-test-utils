@@ -6,12 +6,16 @@
   
   <groupId>top.marchand.maven</groupId>
   <artifactId>test-utils</artifactId>
-  <version>1.00.00-SNAPSHOT</version>
+  <version>1.00.00</version>
   
   <name>Maven Test Utils</name>
   
+  <description>Maven Test utilities</description>
+  
+  <url>https://github.com/cmarchand/maven-test-utils/</url>
   <scm>
     <developerConnection>scm:git:git@github.com:cmarchand/maven-test-utils.git</developerConnection>
+    <url>scm:git:git@github.com:cmarchand/maven-test-utils.git</url>
   </scm>
   
   <developers>
@@ -87,6 +91,46 @@
                 <phase>verify</phase>
                 <goals>
                   <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.7.1</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>3.0.0</version>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.0.1</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>javadoc</goal>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.0.1</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
                 </goals>
               </execution>
             </executions>
